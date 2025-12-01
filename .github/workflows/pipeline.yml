@@ -87,7 +87,7 @@ jobs:
       - name: Start ${{ env.SERVICE_NAME}}
         run: |
           docker run \
-            --rm --detach -publish 8080:8080 \
+            --rm --detach --publish 8080:8080 \
             --name $SERVICE_NAME ghcr.io/${{ github.repository}}:${{ github.sha}}
           sleep 3 #allow some time for the service to start
 
